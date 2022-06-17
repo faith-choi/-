@@ -33,6 +33,6 @@ module.exports = class User extends Sequelize.Model {
   static associate(db) {
     db.User.hasMany(db.Movie);
     db.User.belongsToMany(db.Movie, { through: 'Like', as: 'Liked' });
-    //db.User.belongsToMany(db.Movie, { through: 'Mylist', as: 'List' });
+    db.User.belongsToMany(db.Movie, { through: 'Mylist', as: 'List' });
   }
 };
