@@ -1,7 +1,8 @@
 const express = require('express');
 const db = require('./models');
 const cors = require('cors');
-const morgan = require('morgan'); // 터미널에 프론트 요청오면 로그 찍합니다.
+const morgan = require('morgan');
+const userRouter = require('./router/user.js');
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res, next) => {
   res.send('Hello');
 });
+
+app.use('/user', userRouter);
 
 app.use((req, res, next) => {
   res.sendStatus(404);
