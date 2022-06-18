@@ -1,0 +1,32 @@
+### 
+
+// 회원가입
+POST http://localhost:8000/user/signup
+Content-Type: application/json
+
+{
+    "email":"timeli1@naver.com",
+    "nickname":"광민1",
+    "password":"jason1234!",
+    "passwordCheck":"jason1234!"
+}
+
+###
+// 아이디 중복 검사
+GET http://localhost:8000/user/idCheck
+Content-Type: application/json
+
+{
+    "email":"timeli@naver.com"
+}
+
+###
+// 로그인
+POST http://localhost:8000/user/login
+Content-Type: application/json
+
+{
+    "email":"timeli@naver.com",
+    "password":"jason1234"
+}
+

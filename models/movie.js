@@ -28,10 +28,6 @@ module.exports = class Movie extends Sequelize.Model {
           type: Sequelize.STRING(150),
           allowNull: true,
         },
-        writer: {
-          type: Sequelize.STRING(150),
-          allowNull: true,
-        },
         actor: {
           type: Sequelize.STRING(150),
           allowNull: true,
