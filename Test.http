@@ -5,8 +5,8 @@ POST http://localhost:8000/user/signup
 Content-Type: application/json
 
 {
-    "email":"timeli1@naver.com",
-    "nickname":"광민1",
+    "email":"timeli@naver.com",
+    "nickname":"광민",
     "password":"jason1234!",
     "passwordCheck":"jason1234!"
 }
@@ -17,7 +17,7 @@ GET http://localhost:8000/user/idCheck
 Content-Type: application/json
 
 {
-    "email":"timeli@naver.com"
+    "email":"timeli1@naver.com"
 }
 
 ###
@@ -27,6 +27,31 @@ Content-Type: application/json
 
 {
     "email":"timeli@naver.com",
-    "password":"jason1234"
+    "password":"jason1234!"
 }
 
+###
+// 인증 메일
+POST http://localhost:8000/user/emailAuth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1NTY5MjY4MX0.J51g9sertJt5NGb9Jl2YmgcD7kabBYS_yE-rFCVP-ZA
+Content-Type: application/json
+
+###
+// 인증 체크
+GET http://localhost:8000/user/checkEmailAuth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1NTY5MjY4MX0.J51g9sertJt5NGb9Jl2YmgcD7kabBYS_yE-rFCVP-ZA
+Content-Type: application/json
+
+{
+    "emailAuth": 7530
+}
+
+###
+// 비밀번호 변경
+PATCH  http://localhost:8000/user/changePassword
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1NTY5MjY4MX0.J51g9sertJt5NGb9Jl2YmgcD7kabBYS_yE-rFCVP-ZA
+Content-Type: application/json
+
+{
+    "password": "jason1234"
+}
