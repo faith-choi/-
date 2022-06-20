@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const userRouter = require('./router/user.js');
+const movieRouter = require('./router/movie.js');
 const app = express();
 
 dotenv.config();
@@ -25,6 +26,7 @@ app.get('/', (req, res, next) => {
 });
 
 app.use('/user', userRouter);
+app.use('/movie', movieRouter);
 
 app.use((req, res, next) => {
     res.sendStatus(404);
