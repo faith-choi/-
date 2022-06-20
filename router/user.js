@@ -94,7 +94,7 @@ router.post('/login', async (req, res) => {
 });
 
 // 아이디 중복 검사
-router.get('/idCheck', async (req, res) => {
+router.post('/idCheck', async (req, res) => {
     const { email } = req.body;
     try {
         const user = await User.findOne({

@@ -27,6 +27,7 @@ youtube.search(word, limit, async (err, result) => {
     var videoUrl = 'https://youtube.com/embed/' + video_id;
     var imgUrl = items[0].snippet.thumbnails.high.url;
     var title = items[0].snippet.title;
+
     // var content =
     //     '우연히 연쇄살인마의 표적이 되었다 살아난 조직 보스 장동수와범인잡기에 혈안이 된 강력반 미친개 정태석.타협할 수 없는 두 사람이 연쇄살인마 K를 잡기 위해 손잡는다.표적은 하나, 룰도 하나!먼저 잡는 놈이 갖는다!';
     // var category = 'action';
