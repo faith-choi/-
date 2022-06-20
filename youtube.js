@@ -24,27 +24,24 @@ youtube.search(word, limit, async (err, result) => {
     console.log(JSON.stringify(result, null, 2)); // 받아온 전체 리스트 출력
     var items = result['items']; // 결과 중 items 항목만 가져옴
     var video_id = items[0].id.videoId;
-    var videoUrl = 'https://youtube.com/embed/' + video_id;
-    var imgUrl = items[0].snippet.thumbnails.high.url;
-    var title = items[0].snippet.title;
 
-    // var content =
-    //     '우연히 연쇄살인마의 표적이 되었다 살아난 조직 보스 장동수와범인잡기에 혈안이 된 강력반 미친개 정태석.타협할 수 없는 두 사람이 연쇄살인마 K를 잡기 위해 손잡는다.표적은 하나, 룰도 하나!먼저 잡는 놈이 갖는다!';
-    // var category = 'action';
-    // var director = '이원태';
-    // var writer = '양태원';
-    // var actor =
-    //     '마동석(장동수),김무열(정태석),김성규(강경호),유승목(안호봉),최민철(권오성)';
-    // await Movie.create({
-    //     videoUrl,
-    //     imgUrl,
-    //     title,
-    //     content,
-    //     category,
-    //     director,
-    //     writer,
-    //     actor,
-    // });
+    var videoUrl = 'https://tv.naver.com/embed/26947241';
+    var imgUrl = 'https://movie.naver.com/movie/bi/mi/basic.naver?code=196367';
+    var title = '마녀(魔女) Part2. The Other One';
+    var content =
+        '통제불능의 존재가 세상 밖으로 나왔다!’자윤’이 사라진 뒤,정체불명의 집단의 무차별 습격으로 마녀 프로젝트가 진행되고 있는 ‘아크’가 초토화된다.그곳에서 홀로 살아남은 ‘소녀’는 생애 처음 세상 밖으로 발을 내딛고 우연히 만난 ‘경희’의 도움으로 농장에서 지내며 따뜻한 일상에 적응해간다.한편, ‘소녀’가 망실되자 행방을 쫓는 책임자 ‘장’과 마녀 프로젝트의 창시자 ‘백총괄’의 지령을 받고 제거에 나선 본사 요원 ‘조현’, ‘경희’의 농장 소유권을 노리는 조직의 보스 ‘용두’와 상해에서 온 의문의 4인방까지 각기 다른 목적을 지닌 세력이 하나 둘 모여들기 시작하면서 ‘소녀’ 안에 숨겨진 본성이 깨어나는데…모든 것의 시작,더욱 거대하고 강력해진 마녀가 온다.';
+    var category = '액션';
+    var director = '박훈정';
+    var actor = '신시아, 박은빈, 서은수';
+    await Movie.create({
+        videoUrl,
+        imgUrl,
+        title,
+        content,
+        category,
+        director,
+        actor,
+    });
 
     for (var i in items) {
         var it = items[i];
