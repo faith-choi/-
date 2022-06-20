@@ -56,7 +56,7 @@ Content-Type: application/json
 
 ###
 // 영화 저장
-POST  http://15.164.50.132:8000/movie
+POST  http://15.164.50.132/movie
 Content-Type: application/json
 
 {
