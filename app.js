@@ -2,9 +2,12 @@ const express = require('express');
 const db = require('./models');
 const cors = require('cors');
 const morgan = require('morgan');
+const dotenv = require('dotenv');
 const userRouter = require('./router/user.js');
 const app = express();
+dotenv.config();
 
+app.set('port', process.env.PORT);
 db.sequelize
   .sync()
   .then(() => {
@@ -31,6 +34,6 @@ app.use((error, req, res, next) => {
   res.sendStatus(500);
 });
 
-app.listen(8000, () => {
-  console.log('8000번 서버 실행 중');
+app.listen(app.get('port'), () => {
+  console.log(app.get('port'), '번 포트에서 대기중');
 });

@@ -5,7 +5,10 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const { body } = require('express-validator');
 const validate = require('../middleware/validator.js');
+const nodemailer = require('nodemailer');
 const { Op } = require('sequelize');
+require('dotenv').config();
+const Authmiddleware = require('../middleware/auth');
 
 const validateSignUp = [
   body('email').isEmail().withMessage('email을 입력하세요').normalizeEmail(),
@@ -21,7 +24,7 @@ const validateSignUp = [
 ];
 
 // 회원가입
-router.post('/signup', validateSignUp, async (req, res) => {
+router.post('/signup', validateSignUp, async (req, res, next) => {
   const { email, nickname, password, passwordCheck } = req.body;
 
   try {
@@ -86,7 +89,7 @@ router.post('/login', async (req, res) => {
 
   res.send({
     result: true,
-    token: jwt.sign({ userId: user.id }, 'customized-secret-key'),
+    token: jwt.sign({ userId: user.id }, process.env.JWT_SECRET),
   });
 });
 
@@ -120,5 +123,63 @@ router.get(
     }
   }
 );
+
+// 이메일 인증
+let transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.MY_EMAIL,
+    pass: process.env.EMAIL_PW,
+  },
+});
+
+router.post('/emailAuth', Authmiddleware, async (req, res, next) => {
+  let text = Math.floor(Math.random() * 10000);
+  const user = res.locals.user;
+
+  await User.update({ emailAuth: text }, { where: { id: user.id } });
+
+  transporter
+    .sendMail({
+      from: `넥슬라이스 <neckslice@gmail.com>`,
+      to: `${user.email}`,
+      subject: '[넥슬라이스] 인증번호가 도착했습니다.',
+      text: `${text}`,
+      html: `
+      <div style="text-align: center;">
+        <h3 style="color: #FA5882">인증번호</h3>
+        <br />
+        <p>${text}</p>
+      </div>
+    `,
+    })
+    .then((send) => res.json({ message: '인증 메세지를 이메일로 보냈습니다' }))
+    .catch((err) => next(err));
+});
+
+//  이메일 인증 체크
+router.get('/checkEmailAuth', Authmiddleware, async (req, res, next) => {
+  const { emailAuth } = req.body;
+  const user = res.locals.user;
+  const checkUser = await User.findOne({ where: { id: user.id } });
+  if (emailAuth !== checkUser.emailAuth) {
+    return res.status(401).json({ message: '인증번호가 틀렸습니다.' });
+  }
+  res.json({ message: '인증되었습니다.' });
+});
+
+// 비밀번호 변경
+router.patch('/changePassword', Authmiddleware, async (req, res, next) => {
+  const { password } = req.body;
+  const user = res.locals.user;
+  try {
+    const pwhashed = await bcrypt.hash(password, 10);
+    await User.update({ password: pwhashed }, { where: { id: user.id } });
+    res.json({ message: '비밀번호가 변경됐습니다.' });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
 
 module.exports = router;
