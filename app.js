@@ -3,6 +3,7 @@ const db = require('./models');
 const cors = require('cors');
 const morgan = require('morgan');
 const userRouter = require('./router/user.js');
+const app = express();
 
 db.sequelize
     .sync()
