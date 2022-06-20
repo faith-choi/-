@@ -1,19 +1,17 @@
 ### 
 
 // 회원가입
-POST http://15.164.50.132:8000/user/signup
+POST http://localhost:8000/user/signup
 Content-Type: application/json
 
 {
     "email":"timeli@naver.com",
-    "nickname":"광민",
-    "password":"jason1234!",
-    "passwordCheck":"jason1234!"
+    "password":"jason1234!"
 }
 
 ###
 // 아이디 중복 검사
-GET http://15.164.50.132:8000/user/idCheck
+POST  http://localhost:8000/user/idCheck
 Content-Type: application/json
 
 {

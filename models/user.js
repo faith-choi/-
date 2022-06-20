@@ -11,6 +11,7 @@ module.exports = class User extends Sequelize.Model {
         nickname: {
           type: Sequelize.STRING(30),
           allowNull: false,
+          defaultValue: 'username',
         },
         userImg: {
           type: Sequelize.TEXT,
