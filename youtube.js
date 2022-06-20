@@ -49,7 +49,7 @@ youtube.search(word, limit, async (err, result) => {
         var it = items[i];
         var title = it['snippet']['title'];
         var video_id = it['id']['videoId'];
-        var imgUrl = it['snippet']['thumbnails']['high']['url'];
+        // var imgUrl = it['snippet']['thumbnails']['high']['url'];
         var videoUrl = 'https://youtube.com/embed/' + video_id;
     }
     //     // 유튜브 영상 링크

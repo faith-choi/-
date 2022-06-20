@@ -1,7 +1,7 @@
 ### 
 
 // 회원가입
-POST http://localhost:8000/user/signup
+POST http://15.164.50.132:8000/user/signup
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ###
 // 아이디 중복 검사
-GET http://localhost:8000/user/idCheck
+GET http://15.164.50.132:8000/user/idCheck
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 
 ###
 // 로그인
-POST http://localhost:8000/user/login
+POST http://15.164.50.132:8000/user/login
 Content-Type: application/json
 
 {
@@ -32,24 +32,24 @@ Content-Type: application/json
 
 ###
 // 인증 메일
-POST http://localhost:8000/user/emailAuth
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1NTY5MjY4MX0.J51g9sertJt5NGb9Jl2YmgcD7kabBYS_yE-rFCVP-ZA
+POST http://15.164.50.132:8000/user/emailAuth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTcwMjE3N30.HxqdcEkGQHXQzAIB23ZanaeJPgVGkYYe609w03QUnQ0
 Content-Type: application/json
 
 ###
 // 인증 체크
-GET http://localhost:8000/user/checkEmailAuth
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1NTY5MjY4MX0.J51g9sertJt5NGb9Jl2YmgcD7kabBYS_yE-rFCVP-ZA
+GET http://15.164.50.132:8000/user/checkEmailAuth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTcwMjE3N30.HxqdcEkGQHXQzAIB23ZanaeJPgVGkYYe609w03QUnQ0
 Content-Type: application/json
 
 {
-    "emailAuth": 7530
+    "emailAuth": 3669
 }
 
 ###
 // 비밀번호 변경
-PATCH  http://localhost:8000/user/changePassword
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1NTY5MjY4MX0.J51g9sertJt5NGb9Jl2YmgcD7kabBYS_yE-rFCVP-ZA
+PATCH  http://15.164.50.132:8000/user/changePassword
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTcwMjE3N30.HxqdcEkGQHXQzAIB23ZanaeJPgVGkYYe609w03QUnQ0
 Content-Type: application/json
 
 {
