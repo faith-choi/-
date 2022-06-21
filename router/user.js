@@ -9,7 +9,6 @@ const nodemailer = require('nodemailer');
 const { Op } = require('sequelize');
 require('dotenv').config();
 const Authmiddleware = require('../middleware/auth');
-const Movie = require('../models/movie');
 
 const validateSignUp = [
     body('email').isEmail().withMessage('email을 입력하세요').normalizeEmail(),

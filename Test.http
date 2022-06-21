@@ -20,11 +20,11 @@ Content-Type: application/json
 
 ###
 // 로그인
-POST http://15.164.50.132/user/login
+POST http://127.0.0.1:8000/user/login
 Content-Type: application/json
 
 {
-    "email":"timeli@naver.com",
+    "email":"timeli123@naver.com",
     "password":"jason1234!"
 }
 
@@ -60,12 +60,49 @@ POST  http://15.164.50.132/movie
 Content-Type: application/json
 
 {
-    "videoUrl" = "https://tv.naver.com/embed/26947241",
-    "imgUrl"="https://movie.naver.com/movie/bi/mi/basic.naver?code=196367",
-    "title"="마녀(魔女) Part2. The Other One",
-    "content"="통제불능의 존재가 세상 밖으로 나왔다!’자윤’이 사라진 뒤,정체불명의 집단의 무차별 습격으로 마녀 프로젝트가 진행되고 있는 ‘아크’가 초토화된다.그곳에서 홀로 살아남은 ‘소녀’는 생애 처음 세상 밖으로 발을 내딛고 우연히 만난 ‘경희’의 도움으로 농장에서 지내며 따뜻한 일상에 적응해간다.한편, ‘소녀’가 망실되자 행방을 쫓는 책임자 ‘장’과 마녀 프로젝트의 창시자 ‘백총괄’의 지령을 받고 제거에 나선 본사 요원 ‘조현’, ‘경희’의 농장 소유권을 노리는 조직의 보스 ‘용두’와 상해에서 온 의문의 4인방까지 각기 다른 목적을 지닌 세력이 하나 둘 모여들기 시작하면서 ‘소녀’ 안에 숨겨진 본성이 깨어나는데…모든 것의 시작,더욱 거대하고 강력해진 마녀가 온다.",
-    "category"="액션",
-    "director"="박훈정",
-    "actor"="신시아, 박은빈, 서은수"
+    "videoUrl" : "https://tv.naver.com/embed/20211028",
+    "imgUrl":"https://movie-phinf.pstatic.net/20210517_51/16212169542411PAv1_JPEG/movie_image.jpg?type=m203_290_2",
+    "title":"보이저스",
+    "content":"2063년, 극심한 지구 온난화로 미래 세대가 살아갈 새로운 행성을 개척하기 위해 ‘인류 이주 프로젝트’를 계획한다. 완벽한 우성 인자로 태어나 철저하게 격리 훈련을 받은 ‘30명의 탐사대원들’과 이들을 이끌 대장 ‘리처드’는 ‘휴매니타스호’에 탑승해 우주로 향하게 된다. 한편, 일부 탐사대원들은 자신들의 임무에 대해 떨칠 수 없는 의문을 갖게 되고 그들의 생활 속에 밀접한 ‘블루’를 가장 먼저 의심하기 시작한다. 의심의 시작과 함께 비밀과 음모가 하나 둘 밝혀지게 되고 대원들은 곧 겉잡을 수 없는 혼란에 빠지게 되는데… 인류를 위한 새로운 행성까지 앞으로 86년, 과연 이들은 ‘인류 이주 프로젝트’를 완수할 수 있을까?!",
+    "category":"SF",
+    "director":"닐 버거",
+    "actor":"콜린 파렐, 타이 쉐리던 ,릴리 로즈 멜리디 뎁, 핀 화이트 헤드"
 }
 
+###
+// 좋아요
+POST http://127.0.0.1:8000/api/movie/1/like
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTc4Mzg2MH0.v9Inivn3tpv7JeBPXd6UMTv8UN2LoV79YZCtcmD-wT8
+Content-Type: application/json
+
+###
+// 좋아요 취소
+DELETE  http://127.0.0.1:8000/api/movie/1/like
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTc4Mzg2MH0.v9Inivn3tpv7JeBPXd6UMTv8UN2LoV79YZCtcmD-wT8
+Content-Type: application/json
+
+
+###
+// 찜하기
+POST http://127.0.0.1:8000/api/movie/2/mylist
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTc4ODczNH0.gn2FrhUy2_P-hOxAd_N6dgNqGAyB40SQ1VulEi58Cpg
+Content-Type: application/json
+
+###
+// 찜하기 취소
+DELETE  http://127.0.0.1:8000/api/movie/1/mylist
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTc4Mzg2MH0.v9Inivn3tpv7JeBPXd6UMTv8UN2LoV79YZCtcmD-wT8
+Content-Type: application/json
+
+###
+// 찜한 목록 조회
+GET http://127.0.0.1:8000/api/movie/mylist
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTc4ODczNH0.gn2FrhUy2_P-hOxAd_N6dgNqGAyB40SQ1VulEi58Cpg
+Content-Type: application/json
+
+
+###
+// 검색
+POST http://15.164.50.132/api/movie/
+
+Content-Type: application/json

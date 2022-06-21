@@ -1,30 +1,39 @@
 const express = require('express');
 const router = express.Router();
-const Like = require('../models/movie');
+const Authmiddleware = require('../middleware/auth');
+const Movie = require('../models/movie.js');
 
-router.post('/api/movie/:movieId/like', async (req, res, next) => {
+// 좋아요 추가
+router.post('/movie/:movieId/like', Authmiddleware, async (req, res, next) => {
     try {
-        // const { user } = res.locals;
+        const { user } = res.locals;
         const id = req.params.movieId;
-        const like = await Like.findOne({ where: { id } });
-        if (like) {
-            like.removeLister({
-                // user.id
-            });
-            return res.status(400).send({
-                mylist: true,
-            });
-        } else {
-            like.addlLister({
-                // user.id,
-            });
-            return res.status(200).send({
-                mylist: false,
-            });
-        }
-    } catch (err) {
-        console.log(err);
-        next(err);
+        const userlike = user.id;
+        const movie = await Movie.findOne({ where: { id } });
+        await movie.addLikers(userlike);
+        return res.status(200).send({
+            islike: true,
+        });
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+});
+
+// 좋아요 취소
+router.delete('/movie/:movieId/like', Authmiddleware, async (req, res, next) => {
+    try {
+        const { user } = res.locals;
+        const id = req.params.movieId;
+        const userlike = user.id;
+        const movie = await Movie.findOne({ where: { id } });
+        await movie.removeLikers(userlike);
+        return res.status(200).send({
+            islike: true,
+        });
+    } catch (error) {
+        console.log(error);
+        next(error);
     }
 });
 
