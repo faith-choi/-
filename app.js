@@ -9,6 +9,7 @@ const userRouter = require('./router/user.js');
 const movieRouter = require('./router/movie.js');
 const likeRouter = require('./router/like.js');
 const mylistRouter = require('./router/mylist.js');
+const searchRouter = require('./router/search.js');
 const app = express();
 
 dotenv.config();
@@ -31,7 +32,7 @@ app.get('/', (req, res, next) => {
 });
 
 // app.use('/', userRouter);
-app.use('/', [userRouter, movieRouter, likeRouter, mylistRouter]);
+app.use('/', [userRouter, movieRouter, likeRouter, mylistRouter, searchRouter]);
 
 app.use((req, res, next) => {
     res.sendStatus(404);

@@ -28,6 +28,10 @@ const doc = {
             name: 'Mylist',
             description: '찜 추가, 찜 취소, 찜한목록',
         },
+        {
+            name: 'Search',
+            description: '검색기능',
+        },
     ],
     securityDefinitions: {
         apiKeyAuth: {
@@ -44,6 +48,7 @@ const endpointsFiles = [
     './router/movie.js',
     './router/like.js',
     './router/mylist.js',
+    './router/search.js',
 ];
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
