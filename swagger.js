@@ -5,7 +5,7 @@ const doc = {
         title: '넥슬라이스',
         description: '항해99 3조 nexslice',
     },
-    host: '127.0.0.1:8000',
+    host: '15.164.50.132',
     basePath: '/',
     schemes: ['http'],
     consumes: ['application/json'],
