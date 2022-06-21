@@ -114,5 +114,6 @@ Content-Type: application/json
 
 ###
 // 영화 상세 조회
-GET http://127.0.0.1:8000/api/movie/1
+GET http://127.0.0.1:8000/api/movie/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTgwMTEyN30.gFKCCPNmt4jvrOSlZSwKOCwkzaJNRMQGj_Pa8dcIPMA
 Content-Type: application/json
