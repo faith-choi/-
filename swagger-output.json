@@ -31,7 +31,7 @@
     "application/json"
   ],
   "paths": {
-    "/signup": {
+    "/user/signup": {
       "post": {
         "tags": [
           "Users"
@@ -73,7 +73,7 @@
         }
       }
     },
-    "/login": {
+    "/user/login": {
       "post": {
         "tags": [
           "Users"
@@ -106,7 +106,7 @@
         }
       }
     },
-    "/idCheck": {
+    "/user/idCheck": {
       "post": {
         "tags": [
           "Users"
@@ -136,7 +136,7 @@
         }
       }
     },
-    "/emailAuth": {
+    "/user/emailAuth": {
       "post": {
         "tags": [
           "Users"
@@ -159,7 +159,7 @@
         }
       }
     },
-    "/checkEmailAuth": {
+    "/user/checkEmailAuth": {
       "post": {
         "tags": [
           "Users"
@@ -194,7 +194,7 @@
         }
       }
     },
-    "/changePassword": {
+    "/user/changePassword": {
       "patch": {
         "tags": [
           "Users"
