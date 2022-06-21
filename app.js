@@ -30,8 +30,8 @@ app.get('/', (req, res, next) => {
     res.send('Hello');
 });
 
-app.use('/', userRouter);
-app.use('/', [movieRouter, likeRouter, mylistRouter]);
+// app.use('/', userRouter);
+app.use('/', [userRouter, movieRouter, likeRouter, mylistRouter]);
 
 app.use((req, res, next) => {
     res.sendStatus(404);
