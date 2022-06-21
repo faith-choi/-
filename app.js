@@ -3,6 +3,8 @@ const db = require('./models');
 const cors = require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger-output.json');
 const userRouter = require('./router/user.js');
 const movieRouter = require('./router/movie.js');
 const likeRouter = require('./router/like.js');
@@ -21,6 +23,7 @@ db.sequelize
 
 app.use(cors());
 app.use(morgan('dev'));
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res, next) => {

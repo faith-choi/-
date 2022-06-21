@@ -21,6 +21,7 @@ const validateSignUp = [
 
 // 회원가입
 router.post('/signup', validateSignUp, async (req, res, next) => {
+    // #swagger.tags = ['Users']
     const { email, password } = req.body;
 
     try {
@@ -61,6 +62,7 @@ router.post('/signup', validateSignUp, async (req, res, next) => {
 
 // 로그인 구현 API
 router.post('/login', async (req, res) => {
+    // #swagger.tags = ['Users']
     const { email, password } = req.body;
 
     const user = await User.findOne({
@@ -98,6 +100,7 @@ router.post(
     body('email').isEmail().withMessage('이메일을 입력해주세요').normalizeEmail(),
     validate,
     async (req, res) => {
+        // #swagger.tags = ['Users']
         const { email } = req.body;
         try {
             const user = await User.findOne({
@@ -133,6 +136,7 @@ let transporter = nodemailer.createTransport({
 });
 
 router.post('/emailAuth', Authmiddleware, async (req, res, next) => {
+    // #swagger.tags = ['Users']
     let text = Math.floor(Math.random() * 10000);
     const user = res.locals.user;
 
@@ -158,6 +162,7 @@ router.post('/emailAuth', Authmiddleware, async (req, res, next) => {
 
 //  이메일 인증 체크
 router.post('/checkEmailAuth', Authmiddleware, async (req, res, next) => {
+    // #swagger.tags = ['Users']
     const { emailAuth } = req.body;
     const user = res.locals.user;
     const checkUser = await User.findOne({ where: { id: user.id } });
@@ -169,6 +174,7 @@ router.post('/checkEmailAuth', Authmiddleware, async (req, res, next) => {
 
 // 비밀번호 변경
 router.patch('/changePassword', Authmiddleware, async (req, res, next) => {
+    // #swagger.tags = ['Users']
     const { password } = req.body;
     const user = res.locals.user;
     try {
