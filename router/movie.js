@@ -36,10 +36,9 @@ router.get('/api/movies', async (req, res, next) => {
 // 메인 영상
 router.get('/api/movieUrl', (req, res, next) => {
     // #swagger.tags = ['Movie']
-    const movieUrl1 =
-        "https://nexslice.s3.ap-northeast-2.amazonaws.com/'%EB%B2%94%EC%A3%84%EB%8F%84%EC%8B%9C2'+%EB%A9%94%EC%9D%B8+%EC%98%88%EA%B3%A0%ED%8E%B8.mp4";
+    const movieUrl1 = "s3://nexslice/'범죄도시2' 메인 예고편.mp4";
     const movieUrl2 =
-        'https://nexslice.s3.ap-northeast-2.amazonaws.com/%EC%98%81%ED%99%94+%5B%EB%A7%88%EB%85%802%5D+%ED%8B%B0%EC%A0%80+%EC%98%88%EA%B3%A0%ED%8E%B8+%EC%8B%A0%EC%8B%9C%EC%95%84%2C+%EB%B0%95%EC%9D%80%EB%B9%88%2C+%EC%84%9C%EC%9D%80%EC%88%98%2C+%EC%9D%B4%EC%A2%85%EC%84%9D%2C+%EA%B9%80%EB%8B%A4%EB%AF%B8+2022.06++%EC%95%A1%EC%85%98.mp4';
+        'https://nexslice.s3.ap-northeast-2.amazonaws.com/%27%EB%B2%94%EC%A3%84%EB%8F%84%EC%8B%9C2%27%20%EB%A9%94%EC%9D%B8%20%EC%98%88%EA%B3%A0%ED%8E%B8.mp4?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECYaDmFwLW5vcnRoZWFzdC0yIkYwRAIgBf9fCOlwGKJYqSY80DwPPwtHeeM64TORhnDhv7lArZwCIC%2FUtJenxnGl7sfxsOnXyFQeUwuSIlf7H%2FhlDfmYb8fMKuQCCD8QABoMMDc4MTcxODU1NTQyIgzgA6dwohGC%2Faj4VcgqwQJDWfWUhH%2BiN6gQ3JMPOPRokyhGyemjC9hk4wesRS4Y1iWC618rb8hC1gw1jdMM1mYhkN9QkuU1VC7DoYIcyzJtPtLMBfigfO67PuI%2BzuztR%2BMljkhap1EKVnah30dqup%2BgMKuOLonArvKbVthEYl3XMDQjaSoRNM684nsYJz6VBhPNBQZyV7PHlIAAnThM7MrLK0WCD0XjgpvbzCiyO%2BcyDkWk6L6bmbRAW5AngKcCwD14S7rOmXweNlr1AqNOoHeffm2VBOhBDlcWelRUacRN%2BUNUVQkV6KQ5gbI7rAsqGC7Yh43cfagcj6BSafu4IVNijgQlXYWoUfu7Gh9d4MRBUrGzcZN1GgSwwomk%2Bk28nqba%2BA%2BLf6LrSE68oq8f4enG4jR7ceY9u%2FRSBz2X8z3T3kCE%2B4Ua86kaCMvejWuPS1ww067FlQY6tAJFEPAdCq6g3IThxSnbscKe8DVeiRg%2FQAjK%2BqotwLtD1F0R%2BzUKWtmSKcrREnEw6p5X%2FXpBi6J339cjACwO5Ae%2FAcS5aR8vo%2FnmVDnI03Mh5vJmSsnGJ0WQg3jh8ouEl64gcf0cn3zHw%2BYHc5YVuvVEk%2Be%2BN5Mk8AKZKcixv5kAH2Jsi2zeG1N96dhZYN0xn%2F3eGYvT318%2FCNWowL6MW%2Buufa13sx%2FVl%2FMwkarPkS09FAqlYv6JLggwxr2tVvwlApFMlGGFW3EZQJh1sF3K%2BjmDT2xIIeE7Hsnc5V%2FTHTMDmZ0UvqmMf5mXOoo%2BU5nBRI6y2XTa8yKFwlOcB4okSIYBdUVe2rWjQiYpHojSFVF9%2BD4qJDdCGKL7NSc%2BHrYWJ4YSo90ziHTu3H6QatkuHfrICv3IWw%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220621T150604Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAREM3H3K3KJ5SM6XU%2F20220621%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Signature=5f43ded21cf3aaf9f9ff1842b326a33db88de4460cfeaedaac40c9b719d8dc19';
     res.json({
         movieUrl1,
         movieUrl2,
