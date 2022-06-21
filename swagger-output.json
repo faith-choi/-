@@ -421,7 +421,7 @@
         }
       }
     },
-    "/api/movie/mylist": {
+    "/api/mylist": {
       "get": {
         "tags": [
           "Mylist"
@@ -444,7 +444,7 @@
         }
       }
     },
-    "/movie/search": {
+    "/api/search": {
       "get": {
         "tags": [
           "Search"
@@ -455,6 +455,11 @@
             "name": "title",
             "in": "query",
             "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -463,6 +468,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
