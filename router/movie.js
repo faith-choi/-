@@ -19,7 +19,9 @@ const router = express.Router();
 //     res.json({ message: '생성완료' });
 // });
 
-router.get('/movies', async (req, res, next) => {
+// 영화 전체조회
+router.get('/api/movies', async (req, res, next) => {
+    // #swagger.tags = ['Moive']
     try {
         const movie = await Movie.findAll();
         res.json({
@@ -31,7 +33,9 @@ router.get('/movies', async (req, res, next) => {
     }
 });
 
-router.get('/movieUrl', (req, res, next) => {
+// 메인 영상
+router.get('/api/movieUrl', (req, res, next) => {
+    // #swagger.tags = ['Moive']
     const movieUrl1 =
         "https://nexslice.s3.ap-northeast-2.amazonaws.com/'%EB%B2%94%EC%A3%84%EB%8F%84%EC%8B%9C2'+%EB%A9%94%EC%9D%B8+%EC%98%88%EA%B3%A0%ED%8E%B8.mp4";
     const movieUrl2 =
@@ -42,7 +46,9 @@ router.get('/movieUrl', (req, res, next) => {
     });
 });
 
-router.get('/movie/:movieId', Authmiddleware, async (req, res, next) => {
+// 영화 상세조회
+router.get('/api/movie/:movieId', Authmiddleware, async (req, res, next) => {
+    // #swagger.tags = ['Moive']
     try {
         const id = req.params.movieId;
         const user = res.locals.user;

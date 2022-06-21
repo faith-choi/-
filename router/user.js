@@ -20,7 +20,7 @@ const validateSignUp = [
 ];
 
 // 회원가입
-router.post('/signup', validateSignUp, async (req, res, next) => {
+router.post('/user/signup', validateSignUp, async (req, res, next) => {
     // #swagger.tags = ['Users']
     const { email, password } = req.body;
 
@@ -61,7 +61,7 @@ router.post('/signup', validateSignUp, async (req, res, next) => {
 });
 
 // 로그인 구현 API
-router.post('/login', async (req, res) => {
+router.post('/user/login', async (req, res) => {
     // #swagger.tags = ['Users']
     const { email, password } = req.body;
 
@@ -96,7 +96,7 @@ router.post('/login', async (req, res) => {
 
 // 아이디 중복 검사
 router.post(
-    '/idCheck',
+    '/user/idCheck',
     body('email').isEmail().withMessage('이메일을 입력해주세요').normalizeEmail(),
     validate,
     async (req, res) => {
@@ -135,7 +135,7 @@ let transporter = nodemailer.createTransport({
     },
 });
 
-router.post('/emailAuth', Authmiddleware, async (req, res, next) => {
+router.post('/user/emailAuth', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Users']
     let text = Math.floor(Math.random() * 10000);
     const user = res.locals.user;
@@ -161,7 +161,7 @@ router.post('/emailAuth', Authmiddleware, async (req, res, next) => {
 });
 
 //  이메일 인증 체크
-router.post('/checkEmailAuth', Authmiddleware, async (req, res, next) => {
+router.post('/user/checkEmailAuth', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Users']
     const { emailAuth } = req.body;
     const user = res.locals.user;
@@ -173,7 +173,7 @@ router.post('/checkEmailAuth', Authmiddleware, async (req, res, next) => {
 });
 
 // 비밀번호 변경
-router.patch('/changePassword', Authmiddleware, async (req, res, next) => {
+router.patch('/user/changePassword', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Users']
     const { password } = req.body;
     const user = res.locals.user;

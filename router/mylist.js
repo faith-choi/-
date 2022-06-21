@@ -6,7 +6,8 @@ const User = require('../models/user');
 const Authmiddleware = require('../middleware/auth');
 
 // 찜하기
-router.post('/movie/:movieId/mylist', Authmiddleware, async (req, res, next) => {
+router.post('/api/movie/:movieId/mylist', Authmiddleware, async (req, res, next) => {
+    // #swagger.tags = ['Mylist']
     try {
         const { user } = res.locals;
         const id = req.params.movieId;
@@ -23,7 +24,8 @@ router.post('/movie/:movieId/mylist', Authmiddleware, async (req, res, next) => 
 });
 
 // 찜하기 취소
-router.delete('/movie/:movieId/mylist', Authmiddleware, async (req, res, next) => {
+router.delete('/api/movie/:movieId/mylist', Authmiddleware, async (req, res, next) => {
+    // #swagger.tags = ['Mylist']
     try {
         const { user } = res.locals;
         const id = req.params.movieId;
@@ -40,7 +42,8 @@ router.delete('/movie/:movieId/mylist', Authmiddleware, async (req, res, next) =
 });
 
 // 찜한 목록
-router.get('/movie/mylist', Authmiddleware, async (req, res, next) => {
+router.get('/api/movie/mylist', Authmiddleware, async (req, res, next) => {
+    // #swagger.tags = ['Mylist']
     try {
         const { user } = res.locals;
         const id = user.id;
