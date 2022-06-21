@@ -2,9 +2,10 @@ const express = require('express');
 const sequelize = require('sequelize');
 const router = express.Router();
 const Movie = require('../models/movie');
+const Authmiddleware = require('../middleware/auth');
 const Op = sequelize.Op;
 
-router.get('/movie/search', async (req, res, next) => {
+router.get('/movie/search', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Search']
     try {
         const keyword = req.query.title; //검색어
