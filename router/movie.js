@@ -20,7 +20,7 @@ const router = express.Router();
 // });
 
 // 영화 전체조회
-router.get('/api/movies', Authmiddleware, async (req, res, next) => {
+router.get('/api/movies', async (req, res, next) => {
     // #swagger.tags = ['Movie']
     try {
         const movie = await Movie.findAll();
@@ -34,7 +34,7 @@ router.get('/api/movies', Authmiddleware, async (req, res, next) => {
 });
 
 // 메인 영상
-router.get('/api/movieUrl', Authmiddleware, (req, res, next) => {
+router.get('/api/movieUrl', (req, res, next) => {
     // #swagger.tags = ['Movie']
     const movieUrl1 =
         "https://nexslice.s3.ap-northeast-2.amazonaws.com/'%EB%B2%94%EC%A3%84%EB%8F%84%EC%8B%9C2'+%EB%A9%94%EC%9D%B8+%EC%98%88%EA%B3%A0%ED%8E%B8.mp4";
@@ -47,7 +47,7 @@ router.get('/api/movieUrl', Authmiddleware, (req, res, next) => {
 });
 
 // 영화 상세조회
-router.get('/api/movie/:movieId', Authmiddleware, async (req, res, next) => {
+router.get('/api/movie/:movieId', async (req, res, next) => {
     // #swagger.tags = ['Movie']
     try {
         const id = req.params.movieId;

@@ -22,7 +22,7 @@ router.post('/api/movie/:movieId/like', Authmiddleware, async (req, res, next) =
 });
 
 // 좋아요 취소
-router.delete('/api/movie/:movieId/like', Authmiddleware, async (req, res, next) => {
+router.delete('/api/movie/:movieId/like', async (req, res, next) => {
     // #swagger.tags = ['Like']
     try {
         const { user } = res.locals;
