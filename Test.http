@@ -24,7 +24,7 @@ POST http://127.0.0.1:8000/user/login
 Content-Type: application/json
 
 {
-    "email":"timeli123@naver.com",
+    "email":"timeli@naver.com",
     "password":"jason1234!"
 }
 
@@ -96,20 +96,23 @@ Content-Type: application/json
 
 ###
 // 찜한 목록 조회
-GET http://127.0.0.1:8000/api/movie/mylist
+GET http://127.0.0.1:8000/api/mylist
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTc4ODczNH0.gn2FrhUy2_P-hOxAd_N6dgNqGAyB40SQ1VulEi58Cpg
 Content-Type: application/json
 
 
 ###
 // 검색
-POST http://15.164.50.132/api/movie/
+GET  http://127.0.0.1:8000/api/search?title=어바웃
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
 Content-Type: application/json
+
 
 
 ###
 // 영화 전체 조회
 GET http://127.0.0.1:8000/api/movies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
 Content-Type: application/json
 
 ###

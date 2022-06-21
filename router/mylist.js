@@ -42,18 +42,17 @@ router.delete('/api/movie/:movieId/mylist', Authmiddleware, async (req, res, nex
 });
 
 // 찜한 목록
-router.get('/api/movie/mylist', Authmiddleware, async (req, res, next) => {
+router.get('/api/mylist', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Mylist']
     try {
         const { user } = res.locals;
         const id = user.id;
         const myuser = await User.findOne({
             where: { id },
-            include: { model: Movie, as: 'List', attributes: ['id'] },
+            attributes: ['id'],
+            include: { model: Movie, as: 'List' },
         });
-        res.status(400).send({
-            myuser,
-        });
+        res.status(400).send(myuser);
     } catch (error) {
         console.log(error);
         next(error);
