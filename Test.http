@@ -104,5 +104,15 @@ Content-Type: application/json
 ###
 // 검색
 POST http://15.164.50.132/api/movie/
+Content-Type: application/json
 
+
+###
+// 영화 전체 조회
+GET http://127.0.0.1:8000/api/movies
+Content-Type: application/json
+
+###
+// 영화 상세 조회
+GET http://127.0.0.1:8000/api/movie/1
 Content-Type: application/json

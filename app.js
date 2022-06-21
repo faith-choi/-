@@ -28,8 +28,7 @@ app.get('/', (req, res, next) => {
 });
 
 app.use('/user', userRouter);
-app.use('/movie', movieRouter);
-app.use('/api', [likeRouter, mylistRouter]);
+app.use('/api', [movieRouter, likeRouter, mylistRouter]);
 
 app.use((req, res, next) => {
     res.sendStatus(404);
