@@ -24,6 +24,7 @@ router.get('/api/movies', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Movie']
     try {
         const movie = await Movie.findAll();
+
         res.json({
             movie,
         });
