@@ -35,7 +35,7 @@ router.post('/user/signup', validateSignUp, async (req, res, next) => {
         console.log(existUsers);
 
         if (existUsers.length) {
-            res.status(400).send({
+            res.status(200).json({
                 result: false,
             });
             return;
@@ -71,20 +71,18 @@ router.post('/user/login', async (req, res) => {
             email,
         },
     });
-
     if (!user) {
-        res.status(400).json({
+        res.status(200).json({
             result: false,
-            message: '이메일 또는 패스워드가 잘못됐습니다.',
         });
+
         return;
     }
 
     const passwordCheck = await bcrypt.compare(password, user.password);
     if (!passwordCheck) {
-        res.status(400).json({
+        res.status(200).json({
             result: false,
-            message: '이메일 또는 패스워드가 잘못됐습니다.',
         });
         return;
     }
@@ -113,12 +111,10 @@ router.post(
             if (user === null) {
                 return res.status(200).json({
                     result: true,
-                    message: '사용 가능한 이메일입니다.',
                 });
             }
-            res.status(400).json({
+            res.status(200).json({
                 result: false,
-                message: '중복된 이메일입니다.',
             });
         } catch (error) {
             console.error(error);
