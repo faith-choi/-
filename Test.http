@@ -71,7 +71,7 @@ Content-Type: application/json
 
 ###
 // 좋아요
-PUT  http://127.0.0.1:8000/api/movie/1/like
+PUT  http://15.164.50.132/api/movie/1/like
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJpYXQiOjE2NTU5MDc5NzZ9.rE6xyrLWRWcrPAq9-Q_gkkhqYnsgfGoTUtshw6LejPc
 Content-Type: application/json
 

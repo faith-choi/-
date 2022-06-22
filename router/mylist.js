@@ -19,12 +19,12 @@ router.put('/api/movie/:movieId/mylist', Authmiddleware, async (req, res, next) 
         if (!mylistckeck.length) {
             await movie.addLister(userlike);
             return res.status(200).send({
-                islike: true,
+                myList: true,
             });
         } else {
             await movie.removeLister(userlike);
             return res.status(200).send({
-                islike: false,
+                myList: false,
             });
         }
     } catch (error) {

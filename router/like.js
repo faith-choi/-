@@ -17,12 +17,12 @@ router.put('/api/movie/:movieId/like', Authmiddleware, async (req, res, next) =>
         if (!likeckeck.length) {
             await movie.addLikers(userlike);
             return res.status(200).send({
-                islike: true,
+                isLike: true,
             });
         } else {
             await movie.removeLikers(userlike);
             return res.status(200).send({
-                islike: false,
+                isLike: false,
             });
         }
     } catch (error) {
