@@ -44,7 +44,7 @@ router.get('/api/mylist', Authmiddleware, async (req, res, next) => {
             attributes: ['id'],
             include: { model: Movie, as: 'List' },
         });
-        res.status(400).send(myuser);
+        res.status(200).send(myuser);
     } catch (error) {
         console.log(error);
         next(error);

@@ -85,8 +85,8 @@ Content-Type: application/json
 
 ###
 // 찜한 목록 조회
-GET http://127.0.0.1:8000/api/mylist
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTc4ODczNH0.gn2FrhUy2_P-hOxAd_N6dgNqGAyB40SQ1VulEi58Cpg
+GET http://15.164.50.132/api/mylist
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJpYXQiOjE2NTU5MDc5NzZ9.rE6xyrLWRWcrPAq9-Q_gkkhqYnsgfGoTUtshw6LejPc
 Content-Type: application/json
 
 
