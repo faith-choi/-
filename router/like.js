@@ -21,22 +21,4 @@ router.put('/api/movie/:movieId/like', Authmiddleware, async (req, res, next) =>
     }
 });
 
-// 좋아요 취소
-router.delete('/api/movie/:movieId/like', Authmiddleware, async (req, res, next) => {
-    // #swagger.tags = ['Like']
-    try {
-        const { user } = res.locals;
-        const id = req.params.movieId;
-        const userlike = user.id;
-        const movie = await Movie.findOne({ where: { id } });
-        await movie.removeLikers(userlike);
-        return res.status(200).send({
-            islike: true,
-        });
-    } catch (error) {
-        console.log(error);
-        next(error);
-    }
-});
-
 module.exports = router;

@@ -6,7 +6,7 @@ const User = require('../models/user');
 const Authmiddleware = require('../middleware/auth');
 
 // 찜하기
-router.post('/api/movie/:movieId/mylist', Authmiddleware, async (req, res, next) => {
+router.put('/api/movie/:movieId/mylist', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Mylist']
     try {
         const { user } = res.locals;
@@ -14,24 +14,6 @@ router.post('/api/movie/:movieId/mylist', Authmiddleware, async (req, res, next)
         const userlike = user.id;
         const movie = await Movie.findOne({ where: { id } });
         await movie.addLister(userlike);
-        return res.status(200).send({
-            mylist: true,
-        });
-    } catch (error) {
-        console.log(error);
-        next(error);
-    }
-});
-
-// 찜하기 취소
-router.delete('/api/movie/:movieId/mylist', Authmiddleware, async (req, res, next) => {
-    // #swagger.tags = ['Mylist']
-    try {
-        const { user } = res.locals;
-        const id = req.params.movieId;
-        const userlike = user.id;
-        const movie = await Movie.findOne({ where: { id } });
-        await movie.removeLister(userlike);
         return res.status(200).send({
             mylist: true,
         });

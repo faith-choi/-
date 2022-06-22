@@ -22,11 +22,11 @@ const doc = {
         },
         {
             name: 'Like',
-            description: '좋아요 추가, 좋아요,취소',
+            description: '좋아요 토글,',
         },
         {
             name: 'Mylist',
-            description: '찜 추가, 찜 취소, 찜한목록',
+            description: '찜 토글, 찜 한목록',
         },
         {
             name: 'Search',
