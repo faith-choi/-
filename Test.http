@@ -103,7 +103,7 @@ Content-Type: application/json
 
 ###
 // 검색
-GET  http://15.164.50.132/api/search?title=마녀
+GET  http://15.164.50.132/api/search?title=ㅁ
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
 Content-Type: application/json
 
@@ -119,8 +119,4 @@ Content-Type: application/json
 // 영화 상세 조회
 GET http://127.0.0.1:8000/api/movie/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTgwMTEyN30.gFKCCPNmt4jvrOSlZSwKOCwkzaJNRMQGj_Pa8dcIPMA
-Content-Type: application/json
-
-###
-GET http://15.164.50.132/api/movieUrl
 Content-Type: application/json

@@ -5,19 +5,19 @@ const Authmiddleware = require('../middleware/auth');
 
 const router = express.Router();
 
-router.post('/api', async (req, res, next) => {
-    const { videoUrl, imgUrl, title, content, category, director, actor } = req.body;
-    await Movie.create({
-        videoUrl,
-        imgUrl,
-        title,
-        content,
-        category,
-        director,
-        actor,
-    });
-    res.json({ message: '생성완료' });
-});
+// router.post('/api', async (req, res, next) => {
+//     const { videoUrl, imgUrl, title, content, category, director, actor } = req.body;
+//     await Movie.create({
+//         videoUrl,
+//         imgUrl,
+//         title,
+//         content,
+//         category,
+//         director,
+//         actor,
+//     });
+//     res.json({ message: '생성완료' });
+// });
 
 // 영화 전체조회
 router.get('/api/movies', async (req, res, next) => {

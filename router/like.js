@@ -4,7 +4,7 @@ const Authmiddleware = require('../middleware/auth');
 const Movie = require('../models/movie.js');
 
 // 좋아요 추가
-router.post('/api/movie/:movieId/like', Authmiddleware, async (req, res, next) => {
+router.post('/api/movie/:movieId/like', async (req, res, next) => {
     // #swagger.tags = ['Like']
     try {
         const { user } = res.locals;
