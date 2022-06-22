@@ -60,13 +60,13 @@ POST  http://127.0.0.1:8000/api
 Content-Type: application/json
 
 {
-    "videoUrl" : "https://tv.naver.com/embed/17939046",
-    "imgUrl":"https://movie-phinf.pstatic.net/20210129_144/1611888747580mvVHr_JPEG/movie_image.jpg?type=m203_290_2",
-    "title":"인투 더 미러",
-    "content":"스타트 업에 뛰어든 노엘, 리나, 조쉬, 데빈, 4명의 친구들은 프리미엄 주차앱의 완성을 위해서 앞으로 한 달의 시간이 더 필요하다. 하지만 투자사는 당장 완성하지 않으면 계약을 취소하겠다고 통보하고 믿었던 동료는 배신을 한다. 암담한 미래에 모두가 패닉에 빠진 순간 스트레스로 집어 던진 렌치에 맞아 벽 너머 숨겨진 다락방이 나타나고 그 곳에서 다른 차원의 평행세계로 이동할 수 있는 기이한 거울을 발견한다. 그리고 놀랍게도 거울 안의 시간은 현재보다 느리게 움직이고 거울 속 세계에도 똑같은 자신들이 존재하는데… 거울 속 평행세계... 시간에 접속해 운명을 훔쳐라!",
-    "category":"SF",
-    "director":"아이작 에즈반",
-    "actor":"마르틴 발스트룀, 조지아 킹, 마크 오브 라이언, 에델 아민"
+    "videoUrl" : "http://h.vod.cgv.co.kr/vodCGVa/85715/85715_201958_1200_128_960_540.mp4",
+    "imgUrl":"https://movie-phinf.pstatic.net/20141014_142/1413271826240El8hC_JPEG/movie_image.jpg?type=m203_290_2",
+    "title":"test",
+    "content":"2차 세계대전, 전차부대를 이끄는 대장 ‘워대디’에게 적으로 둘러싸인 최전선에서의 마지막 전투 명령이 떨어진다. 하지만 수 차례의 전투로 대부분의 동료를 잃은 그에겐 단 한 대의 탱크 ‘퓨리’와 지칠 대로 지쳐버린 부대원들만이 남아있을 뿐이다. 게다가 지원군으로 경력이 전무한 신병 ‘노먼’이 배치되고, ‘워대디’는 신참을 포함한 단 4명의 부대원만으로 적진에 나서야 하는 상황에 처한다. 수백 명의 적들과 맞서야 하는 단 5인의 병사. 최소의 인원과 최악의 조건 속, 사상 최대 위기에 처한 ‘워대디’와 그의 부대는 생존 가능성 제로, 최후의 전쟁터로 향하는데…! 역사를 바꾼 그들의 불가능한 전쟁이 시작된다!",
+    "category":"코미디",
+    "director":"데이비드 에이어",
+    "actor":"브래드 피트, 로건 레먼, 샤이아 라보프"
 }
 
 ###
@@ -103,7 +103,7 @@ Content-Type: application/json
 
 ###
 // 검색
-GET  http://15.164.50.132/api/search?title=마
+GET  http://15.164.50.132/api/search?title=마녀
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
 Content-Type: application/json
 

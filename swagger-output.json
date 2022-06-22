@@ -86,9 +86,6 @@
           "201": {
             "description": "Created"
           },
-          "400": {
-            "description": "Bad Request"
-          },
           "401": {
             "description": "Unauthorized"
           }
@@ -121,9 +118,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
           }
         }
       }
@@ -317,13 +311,41 @@
         "responses": {}
       }
     },
-    "/api/movies": {
-      "get": {
-        "tags": [
-          "Movie"
-        ],
+    "/api": {
+      "post": {
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "videoUrl": {
+                  "example": "any"
+                },
+                "imgUrl": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "content": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
+                },
+                "director": {
+                  "example": "any"
+                },
+                "actor": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -331,7 +353,7 @@
         }
       }
     },
-    "/api/movieUrl": {
+    "/api/movies": {
       "get": {
         "tags": [
           "Movie"
