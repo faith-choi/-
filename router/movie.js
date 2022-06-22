@@ -31,16 +31,17 @@ router.get('/api/movies', Authmiddleware, async (req, res, next) => {
             ],
         });
         console.log(movie[0]['Likers'][0]['dataValues']['id']);
+        // console.log(movie[0]['Lister'][0]['dataValues']['id']);
         const likers = movie.map((m) => m['Likers'].map((n) => n['dataValues']['id']));
         const likes = likers.map((m) => m.includes(user.id));
-        const listers = movie.map((m) => m['Lister'].map((n) => n['dataValues']['id']));
-        const lister = listers.map((m) => m.includes(user.id));
+        // const listers = movie.map((m) => m['Lister'].map((n) => n['dataValues']['id']));
+        // const lister = listers.map((m) => m.includes(user.id));
         console.log(likers);
-        console.log(listers);
+        // console.log(listers);
         res.json({
             movie,
             likes,
-            lister,
+            // lister,
         });
     } catch (error) {
         console.log(error);
