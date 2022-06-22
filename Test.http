@@ -103,7 +103,7 @@ Content-Type: application/json
 
 ###
 // 검색
-GET  http://127.0.0.1:8000/api/search?title=어바웃
+GET  http://15.164.50.132/api/search?title=마
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
 Content-Type: application/json
 
