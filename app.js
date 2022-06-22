@@ -23,7 +23,6 @@ db.sequelize
     .catch(console.error);
 
 app.use(cors());
-app.disable('etag');
 app.use(morgan('dev'));
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(express.json());

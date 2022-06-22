@@ -11,10 +11,20 @@ router.put('/api/movie/:movieId/like', Authmiddleware, async (req, res, next) =>
         const id = req.params.movieId;
         const userlike = user.id;
         const movie = await Movie.findOne({ where: { id } });
-        await movie.addLikers(userlike);
-        return res.status(200).send({
-            islike: true,
+        const likeckeck = await movie.getLikers({
+            where: { id: user.id },
         });
+        if (!likeckeck.length) {
+            await movie.addLikers(userlike);
+            return res.status(200).send({
+                islike: true,
+            });
+        } else {
+            await movie.removeLikers(userlike);
+            return res.status(200).send({
+                islike: false,
+            });
+        }
     } catch (error) {
         console.log(error);
         next(error);
