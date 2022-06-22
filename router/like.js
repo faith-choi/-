@@ -14,7 +14,7 @@ router.put('/api/movie/:movieId/like', Authmiddleware, async (req, res, next) =>
         const likeckeck = await movie.getLikers({
             where: { id: user.id },
         });
-        if (!likeckeck.length) {
+        if (likeckeck.length) {
             await movie.addLikers(userlike);
             return res.status(200).send({
                 islike: true,

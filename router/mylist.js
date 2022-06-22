@@ -16,7 +16,7 @@ router.put('/api/movie/:movieId/mylist', Authmiddleware, async (req, res, next) 
         const mylistckeck = await movie.getLister({
             where: { id: user.id },
         });
-        if (!mylistckeck.length) {
+        if (mylistckeck.length) {
             await movie.addLister(userlike);
             return res.status(200).send({
                 islike: true,
