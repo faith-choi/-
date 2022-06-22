@@ -112,7 +112,7 @@ Content-Type: application/json
 ###
 // 영화 전체 조회
 GET http://127.0.0.1:8000/api/movies
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
 Content-Type: application/json
 
 ###
