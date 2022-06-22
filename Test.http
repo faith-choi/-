@@ -71,7 +71,7 @@ Content-Type: application/json
 
 ###
 // 좋아요
-POST http://127.0.0.1:8000/api/movie/1/like
+GET http://127.0.0.1:8000/api/movie/1/like
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTc4Mzg2MH0.v9Inivn3tpv7JeBPXd6UMTv8UN2LoV79YZCtcmD-wT8
 Content-Type: application/json
 
