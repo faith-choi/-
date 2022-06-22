@@ -24,7 +24,7 @@ POST http://127.0.0.1:8000/user/login
 Content-Type: application/json
 
 {
-    "email":"timeli@naver.com",
+    "email":"timeli123@naver.com",
     "password":"jason1234!"
 }
 
@@ -112,11 +112,11 @@ Content-Type: application/json
 ###
 // 영화 전체 조회
 GET http://127.0.0.1:8000/api/movies
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJpYXQiOjE2NTU4OTk1MDR9.uAN3TMeNBVWu-y90zx_Vv-vSMebJRuqj2w5zpQugP0g
 Content-Type: application/json
 
 ###
 // 영화 상세 조회
-GET http://15.164.50.132/api/movie/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1NTgwMTEyN30.gFKCCPNmt4jvrOSlZSwKOCwkzaJNRMQGj_Pa8dcIPMA
+GET http://127.0.0.1:8000/api/movie/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJpYXQiOjE2NTU4OTk1MDR9.uAN3TMeNBVWu-y90zx_Vv-vSMebJRuqj2w5zpQugP0g
 Content-Type: application/json
