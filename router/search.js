@@ -5,7 +5,7 @@ const Movie = require('../models/movie');
 const Authmiddleware = require('../middleware/auth');
 const Op = sequelize.Op;
 
-router.get('/api/search', async (req, res, next) => {
+router.get('/api/search', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Search']
     try {
         const keyword = req.query.title; //검색어

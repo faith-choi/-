@@ -20,7 +20,7 @@ const router = express.Router();
 // });
 
 // 영화 전체조회
-router.get('/api/movies', async (req, res, next) => {
+router.get('/api/movies', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Movie']
     try {
         const movie = await Movie.findAll();
@@ -34,7 +34,7 @@ router.get('/api/movies', async (req, res, next) => {
 });
 
 // 영화 상세조회
-router.get('/api/movie/:movieId', async (req, res, next) => {
+router.get('/api/movie/:movieId', Authmiddleware, async (req, res, next) => {
     // #swagger.tags = ['Movie']
     try {
         const id = req.params.movieId;
