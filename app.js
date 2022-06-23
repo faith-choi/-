@@ -31,7 +31,6 @@ app.get('/', (req, res, next) => {
     res.send('Hello');
 });
 
-// app.use('/', userRouter);
 app.use('/', [userRouter, movieRouter, likeRouter, mylistRouter, searchRouter]);
 
 app.use((req, res, next) => {
