@@ -20,7 +20,7 @@ Content-Type: application/json
 
 ###
 // 로그인
-POST http://127.0.0.1:8000/user/login
+POST http://15.164.50.132/user/login
 Content-Type: application/json
 
 {
@@ -56,7 +56,7 @@ Content-Type: application/json
 
 ###
 // 영화 저장
-POST  http://127.0.0.1:8000/api
+POST  http://15.164.50.132/api
 Content-Type: application/json
 
 {
@@ -71,27 +71,27 @@ Content-Type: application/json
 
 ###
 // 좋아요
-PUT  http://127.0.0.1:8000/api/movie/1/like
+PUT  http://15.164.50.132/api/movie/1/like
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJpYXQiOjE2NTU5MDc5NzZ9.rE6xyrLWRWcrPAq9-Q_gkkhqYnsgfGoTUtshw6LejPc
 Content-Type: application/json
 
 
 ###
 // 찜하기
-PUT  http://127.0.0.1:8000/api/movie/1/mylist
+PUT  http://15.164.50.132/api/movie/1/mylist
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJpYXQiOjE2NTU5MDc5NzZ9.rE6xyrLWRWcrPAq9-Q_gkkhqYnsgfGoTUtshw6LejPc
 
 
 ###
 // 찜한 목록 조회
-GET http://127.0.0.1:8000/api/mylist
+GET http://15.164.50.132/api/mylist
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJpYXQiOjE2NTU5MDc5NzZ9.rE6xyrLWRWcrPAq9-Q_gkkhqYnsgfGoTUtshw6LejPc
 Content-Type: application/json
 
 
 ###
 // 검색
-GET  http://127.0.0.1:8000/api/search?title=%25EB%25A7%2588%25EB%2585%2580
+GET  http://15.164.50.132/api/search?title=%25EB%25A7%2588%25EB%2585%2580
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1NTgxMjA0Nn0.1vK60DBB9EqxY4C3Tep7QZl5-0H-er25Hnzg-xAh8fs
 Content-Type: application/json
 

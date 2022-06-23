@@ -10,7 +10,7 @@ router.get('/api/search', Authmiddleware, async (req, res, next) => {
     try {
         const keyword = req.query.title; //검색어
         const newkeyword = decodeURIComponent(keyword);
-        console.log(newkeyword);
+        // console.log(newkeyword);
         console.log(req.query);
         if (!newkeyword) {
             return res.status(400).json({ msg: '검색어를 입력하세요. ' });
