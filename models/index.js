@@ -6,18 +6,13 @@ const Movie = require('./movie');
 
 const db = {};
 
-const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
-  {
+const sequelize = new Sequelize(config.database, config.username, config.password, {
     host: 'database-1.ctqwwyyctbbp.ap-northeast-2.rds.amazonaws.com',
     dialect: 'mysql',
     timezone: '+09:00',
     dialectOptions: { charset: 'utf8mb4', dateStrings: true, typeCast: true },
     timezone: '+09:00',
-  }
-);
+});
 
 db.sequelize = sequelize;
 db.User = User;
