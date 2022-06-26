@@ -1,27 +1,26 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: SERVER CI-CD
-
+name: CI-CD
 on:
   push:
-    branches: [ main ]
-
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-18.04
-
     steps:
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.REMOTE_IP }}
-          username: ${{ secrets.REMOTE_SSH_ID }}
-          key: ${{ secrets.REMOTE_SSH_KEY }}
-          port: ${{ secrets.REMOTE_SSH_PORT }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           script: |
-            cd /home/ubuntu/ezhome
+            cd /home/ubuntu/ARTILY_BE
+            git config --global --add safe.directory /home/ubuntu/ARTILY_BE
             sudo git pull
-            sudo yarn
-            sudo yarn build
-            pm2 reload all
+            sudo npm update
+            sudo npm install
+            sudo pm2 reload all
